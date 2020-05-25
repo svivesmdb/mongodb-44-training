@@ -5,6 +5,8 @@ else
     exit
 fi
 
+docker pull svives/mongodb-44-training
+
 # Create the internal network where each cluster sees each other
 docker network create mongo-sa-44-cluster || true
 
@@ -15,7 +17,7 @@ docker run \
     -p 30011:27017 \
     --name mongo_44_1 \
     --net mongo-sa-44-cluster \
-    mongo_44 \
+    svives/mongodb-44-training:latest \
     mongod --replSet replicaset44 --bind_ip_all
 
 docker run \
@@ -23,7 +25,7 @@ docker run \
     -p 30012:27017 \
     --name mongo_44_2 \
     --net mongo-sa-44-cluster \
-    mongo_44 \
+    svives/mongodb-44-training:latest \
     mongod --replSet replicaset44 --bind_ip_all
 
 docker run \
@@ -31,7 +33,7 @@ docker run \
     -p 30013:27017 \
     --name mongo_44_3 \
     --net mongo-sa-44-cluster \
-    mongo_44 \
+    svives/mongodb-44-training:latest \
     mongod --replSet replicaset44 --bind_ip_all
 
 echo "Sleeping for 30 seconds to wait for containers to start-up"

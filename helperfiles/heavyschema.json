@@ -9,6 +9,5 @@
     },
     "joined": "$now",
     "emails": {"$array": {"of": "$email", "number": 3}},
-    "status": {"$choose": {"from": ["read", "unread", "deleted"], "weights": [2, 1, 1]}},
-    "checksumdata": {"$binary":{"length":2000000}}
+    "status": {"$choose": {"from": ["read", "unread", "deleted"], "weights": [2, 1, 1]}}
 }

@@ -14,5 +14,3 @@ docker run \
     --net mongo-sa-44-cluster \
     mongo_44 \
     mongod --replSet replicaset44 --bind_ip_all &
-
-
