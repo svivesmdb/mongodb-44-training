@@ -6,4 +6,4 @@
 #docker container rm mongo_44_3 || true
 
 # docker build . --tag mongo_44 --no-cache
-docker build . --tag svives/mongodb-44-training
+docker build . --tag svives/mongodb-44-training:latest

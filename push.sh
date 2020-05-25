@@ -1,0 +1,1 @@
+docker push svives/mongodb-44-training:latest
